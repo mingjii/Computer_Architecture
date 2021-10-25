@@ -18,7 +18,8 @@ main:
         lw      s1, 4(sp)
         lw      ra, 8(sp)
         addi    sp, sp, 12
-        ret
+        li      a7, 10
+        ecall
 
 # print function
 printResult:
@@ -50,7 +51,7 @@ isOdd:
         beq     t0, zero, shiftRightOne
         addi    s1, s1, 1       # ++dis
 shiftRightOne:
-        srai    a0, a0, 1
+        srai    s0, s0, 1
         j       while
 return:
         mv      a0, a1
